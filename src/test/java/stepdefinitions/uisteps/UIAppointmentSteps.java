@@ -66,8 +66,8 @@ public class UIAppointmentSteps {
     }
     @When("user provides the date {string}")
     public void user_provides_the_date(String date) {
-        //05-04-2022
-//        date = getDate();
+        //14-04-2022
+        date = getDate();
         appointment.setDate(date);
 
         Driver.waitAndSendText(appointmentPage.dateTextbox, date+ Keys.ENTER);

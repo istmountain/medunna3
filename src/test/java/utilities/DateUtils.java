@@ -5,6 +5,10 @@ import java.time.format.DateTimeFormatter;
 
 public class DateUtils {
 
+//    public static void main(String[] args) {
+//        System.out.println(getDate());
+//    }
+
 
     public static String getDate(){
         LocalDateTime dateObj = LocalDateTime.now();

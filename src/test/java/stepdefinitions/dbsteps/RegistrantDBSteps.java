@@ -25,6 +25,7 @@ public class RegistrantDBSteps {
     }
     @Given("user saves the DB records to correspondent files")
     public void user_saves_the_db_records_to_correspondent_files() {
+
         saveRegistrantData(allDBSSNs);
     }
     @Then("user validates DB Registrant data")

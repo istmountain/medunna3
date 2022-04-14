@@ -1,8 +1,6 @@
 Feature: DB Registrants tests
 
 
-
-
   Background: db connection set up
     Given user creates a connection with DB using "jdbc:postgresql://medunna.com:5432/medunna_db" and "medunnadb_user" , "Medunnadb_@129"
 

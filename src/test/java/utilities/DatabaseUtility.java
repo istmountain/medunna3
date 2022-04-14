@@ -9,6 +9,7 @@ public class DatabaseUtility {
     private static Connection connection;
     private static Statement statement;
     private static ResultSet resultSet;
+
     public static void createConnection() {
         String url = ConfigurationReader.getProperty("database_url");
         String user = ConfigurationReader.getProperty("database_user");

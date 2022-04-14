@@ -12,4 +12,4 @@ Feature: appointments test
 
     Examples: test data
       |firstname|lastname|SSN|email|phoneNumber|date|
-      |Patient   |Murat |777-04-0404|patientmurat@medunna.com|777-04-0404|15-04-2022|
+      |Patient   |Murat |777-04-0404|patientmurat@medunna.com|777-555-0404|15-04-2022|

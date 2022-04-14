@@ -23,8 +23,6 @@ public class UIAppointmentSteps {
     public void user_clicks_on_make_an_appointment() {
 
         Driver.waitAndClick(appointmentPage.MakeAnAppointmentButton);
-
-
     }
     @Given("user provides the appoinment name {string}")
     public void user_provides_the_appoinment_name(String firstname) {
@@ -51,15 +49,11 @@ public class UIAppointmentSteps {
 
         Driver.waitAndSendText(appointmentPage.ssnTextbox, ssn);
         Driver.waitAndSendText(appointmentPage.emailTextbox, email);
-
-
-
-
-
     }
+
     @When("user provides the phone number {string}")
     public void user_provides_the_phone_number(String phoneNumber) {
-        phoneNumber = faker.phoneNumber().cellPhone();
+        //phoneNumber = faker.phoneNumber().cellPhone();
         appointment.setPhoneNumber(phoneNumber);
 
         Driver.waitAndSendText(appointmentPage.phoneTextbox, phoneNumber);
@@ -67,12 +61,12 @@ public class UIAppointmentSteps {
     @When("user provides the date {string}")
     public void user_provides_the_date(String date) {
         //14-04-2022
-        date = getDate();
+        //date = getDate();
         appointment.setDate(date);
 
         Driver.waitAndSendText(appointmentPage.dateTextbox, date+ Keys.ENTER);
-
     }
+
     @Then("user requests appointment and verifies the success message")
     public void user_requests_appointment_and_verifies_the_success_message() {
 
@@ -81,5 +75,4 @@ public class UIAppointmentSteps {
 
         Assert.assertTrue(Driver.waitForVisibility(appointmentPage.successMessageToastContainer, 5).isDisplayed());
     }
-
 }

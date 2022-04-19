@@ -24,7 +24,12 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f">
+        <schema name="pg_catalog" object-types="table, view, function" />
+        <schema name="public" object-types="table, view, function, column" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f">
@@ -32,13 +37,27 @@
 
 select * from physician
 
+select * from physician where id=42999
+
 select * from jhi_user
 
-select * from appointment]]></console>
+select * from appointment
+
+select * from bill
+
+select * from country
+
+select * from room
+
+select * from country where id=43988
+
+select id from cmessage]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" object-ref="consoles/Medunna DB" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" />

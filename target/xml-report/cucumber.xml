@@ -1,15 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="13.616">
-    <testcase classname="appointments test" name="test appointments" time="13.317">
-        <system-out>
-            <![CDATA[Given user clicks on make an appointment....................................passed
-And user provides the appoinment name "Patient".............................passed
-And user provides the appointment lastname "Murat"..........................passed
-And user provides ssn and email "777-04-0404" and "patientmurat@medunna.com".passed
-When user provides the phone number "777-555-0404"..........................passed
-And user provides the date "15-04-2022".....................................passed
-Then user requests appointment and verifies the success message.............passed
+<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.425">
+    <testcase classname="database" name="read room information" time="5.21">
+        <failure message="" type="java.lang.AssertionError">
+            <![CDATA[Given room user connects to the database....................................passed
+And room user gets the "*" from "room" table................................passed
+And room user read all of the "room_type" column data.......................passed
+And room verify "room" table "room_type" column contains "3333".............failed
+
+StackTrace:
+java.lang.AssertionError
+	at org.junit.Assert.fail(Assert.java:87)
+	at org.junit.Assert.assertTrue(Assert.java:42)
+	at org.junit.Assert.assertTrue(Assert.java:53)
+	at stepdefinitions.dbsteps.DBRoom.room_verify_table_column_contains(DBRoom.java:55)
+	at ✽.room verify "room" table "room_type" column contains "3333"(file:///C:/Users/MuratTANC/Documents/MedunnaSon/./src/test/resources/features/DBRoom.feature:10)
 ]]>
-        </system-out>
+        </failure>
     </testcase>
 </testsuite>

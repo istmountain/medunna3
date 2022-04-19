@@ -1,10 +1,12 @@
 package utilities;
 
 import pojos.Appointment;
+import pojos.Physician;
 import pojos.Registrant;
 
 import java.io.BufferedWriter;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.List;
 
 public class WriteToTxt {
@@ -103,6 +105,45 @@ public class WriteToTxt {
         }
 
 
+    }
+
+//    public static void savePhysicianIds(String fileName, Physician[] physicians)  {
+//        try {
+//            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName, false));
+//
+//            for (int i = 0; i < physicians.length ; i++) {
+//                writer.append(physicians[i].getId()+",\n");
+//            }
+//
+//
+//            writer.close();
+//        } catch(Exception e){
+//
+//        }
+//    }
+
+    public static void savePhysicianIds(String fileName, List<Object> id){
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,false));
+
+            for (int i=0; i< id.size(); i++)
+                writer.append(id.get(i).toString()+",\n");
+
+            writer.close();
+        } catch (IOException e){
+        }
+    }
+
+    public static void savePhysicianName(String fileName, List<Object> firstname){
+        try {
+            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName,false));
+
+            for (int i=0; i< firstname.size(); i++)
+                writer.append(firstname.get(i).toString()+",\n");
+
+            writer.close();
+        } catch (IOException e){
+        }
     }
 
 }

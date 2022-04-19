@@ -6,3 +6,4 @@ Appointment{firstname='Teodora', lastname='Mante', ssn='740-72-5852', email='dom
 Appointment{firstname='Darryl', lastname='Funk', ssn='189-01-5608', email='nikita.kilback@hotmail.com', phoneNumber='565.769.6413', date='15-04-2022'}
 Appointment{firstname='Albina', lastname='Stanton', ssn='481-48-1458', email='gia.kemmer@yahoo.com', phoneNumber='384.751.6125', date='15-04-2022'}
 Appointment{firstname='Deann', lastname='Haley', ssn='193-22-1343', email='dorris.torphy@hotmail.com', phoneNumber='777-04-0404', date='15-04-2022'}
+Appointment{firstname='Monroe', lastname='Schoen', ssn='502-90-8585', email='marietta.lind@gmail.com', phoneNumber='777-555-0404', date='15-04-2022'}

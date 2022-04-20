@@ -45,19 +45,25 @@ select * from appointment
 
 select * from bill
 
-select * from country
+select * from c_state
+
+select * from c_test
+
+select * from c_test_item
+
+select * from c_test_result
+
+select * from cmessage
+
+select * from country where id=80063
 
 select * from room
 
-select * from country where id=43988
-
-select id from cmessage]]></console>
+select * from country]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" object-ref="consoles/Medunna DB" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" />

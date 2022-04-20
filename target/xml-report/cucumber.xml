@@ -1,20 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="1" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.425">
-    <testcase classname="database" name="read room information" time="5.21">
-        <failure message="" type="java.lang.AssertionError">
-            <![CDATA[Given room user connects to the database....................................passed
-And room user gets the "*" from "room" table................................passed
-And room user read all of the "room_type" column data.......................passed
-And room verify "room" table "room_type" column contains "3333".............failed
-
-StackTrace:
-java.lang.AssertionError
-	at org.junit.Assert.fail(Assert.java:87)
-	at org.junit.Assert.assertTrue(Assert.java:42)
-	at org.junit.Assert.assertTrue(Assert.java:53)
-	at stepdefinitions.dbsteps.DBRoom.room_verify_table_column_contains(DBRoom.java:55)
-	at ✽.room verify "room" table "room_type" column contains "3333"(file:///C:/Users/MuratTANC/Documents/MedunnaSon/./src/test/resources/features/DBRoom.feature:10)
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.119">
+    <testcase classname="api test item creation" name="api test item creation" time="4.885">
+        <system-out>
+            <![CDATA[* user sets the necessary path parameters...................................passed
+* user sets the expected data "H1bAc6", "3 AYLIK SEKER", "599", "1", "15"...passed
+* user send the post request and gets the response..........................passed
+* user validates all api records............................................passed
 ]]>
-        </failure>
+        </system-out>
     </testcase>
 </testsuite>

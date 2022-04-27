@@ -8,6 +8,7 @@ import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
 import com.itextpdf.text.pdf.PdfWriter;
 import pojos.Registrant;
+import pojos.TestItem;
 
 
 import java.io.FileOutputStream;
@@ -69,18 +70,29 @@ public class PDFGenerator {
 
     }
 
+    public static void main(String[] args) {
+        pdfGenerator("MEDUNNA PROJECT", "deneme.pdf");
+    }
 
 
 
 
 
 
-    public static void pdfGeneratorRowsAndCellsWithList(String header, List <Registrant> list, String fileName,List<String> headers){
+
+    public static void pdfGeneratorRowsAndCellsWithList(String header, List <TestItem> list, String fileName){
 
         Document document = new Document();
         String pdf_path = fileName;
         String pdf_title = header;
-        String logo_path = "/Users/ibrahimkalin/Downloads/Techproed.jpg";
+        //String logo_path = "src/test/resources/testdata/MedunnaLogo.jpg";
+
+        List<String> headers1 = new ArrayList<String>();
+        headers1.add("Applicant");
+        headers1.add("SSN");
+        headers1.add("Country");
+        headers1.add("State");
+
 
 
 
@@ -93,18 +105,18 @@ public class PDFGenerator {
 
             document.add(new Paragraph("                                     "+pdf_title));
 
-            PdfPTable table = new PdfPTable(headers.size());
+            PdfPTable table = new PdfPTable(headers1.size());
             table.setWidthPercentage(110);
             table.setSpacingBefore(25);
             table.setSpacingAfter(25);
-            float [] colWidth = {2,2,2,2,2};
+            float [] colWidth = {2,2,2,2};
             table.setWidths(colWidth);
 
 
 
-            for(int i=0;i<headers.size();i++) {
+            for(int i=0;i<headers1.size();i++) {
 
-                PdfPCell cell1 = new PdfPCell(new Phrase(headers.get(i)));
+                PdfPCell cell1 = new PdfPCell(new Phrase(headers1.get(i)));
                 table.addCell(cell1);
 
             }
@@ -113,16 +125,15 @@ public class PDFGenerator {
 
             for(int i=0;i<list.size();i++ ) {
 
-                table.addCell(list.get(i).getFirstName());
-                table.addCell(list.get(i).getLastName());
-                table.addCell(list.get(i).getSsn());
-                table.addCell(list.get(i).getEmail());
-                table.addCell(list.get(i).getLogin());
+                table.addCell(list.get(i).getName());
+                table.addCell(list.get(i).getDescription());
+                table.addCell(list.get(i).getDefaultValMin());
+                table.addCell(list.get(i).getDefaultValMax());
 
             }
             document.add(table);
 
-            document.add(Image.getInstance(logo_path));
+            //document.add(Image.getInstance(logo_path));
             document.close();
 
             writer.close();

@@ -24,12 +24,7 @@
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes>
-      <connection connection-id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f">
-        <schema name="pg_catalog" object-types="table, view, function" />
-        <schema name="public" object-types="table, view, function, column" />
-      </connection>
-    </loaded-nodes>
+    <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f">
@@ -63,7 +58,9 @@ select * from country]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files />
+    <open-files>
+      <object connection-id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" object-ref="consoles/Medunna DB" />
+    </open-files>
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" />

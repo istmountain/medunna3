@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="5.119">
-    <testcase classname="api test item creation" name="api test item creation" time="4.885">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="3.68">
+    <testcase classname="Pdf genarator" name="kullanici datalarini oku ve pdf olustur" time="3.438">
         <system-out>
-            <![CDATA[* user sets the necessary path parameters...................................passed
-* user sets the expected data "H1bAc6", "3 AYLIK SEKER", "599", "1", "15"...passed
-* user send the post request and gets the response..........................passed
-* user validates all api records............................................passed
+            <![CDATA[* DB'e baglan "jdbc:postgresql://medunna.com:5432/medunna_db" and "medunnadb_user" , "Medunnadb_@129".passed
+* pdf olusturmak icin "Select * from jhi_user" yap..........................passed
 ]]>
         </system-out>
     </testcase>

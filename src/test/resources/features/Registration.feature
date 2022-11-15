@@ -21,7 +21,7 @@ Feature: test all registrant data
     Given user provides the password "<password>"
     Then user valides the password strength "<strength>"
     Examples: test data
-      |password|strength|
-      |asdfgkdjs|1      |
-      |asdfgkdjs?|2    |
-      |asdhgsag?1|3    |
+      |password  |strength|
+      |asdfgkdjs |1       |
+      |asdfgkdjs?|2       |
+      |asdhgsag?1|3       |

@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="3.68">
-    <testcase classname="Pdf genarator" name="kullanici datalarini oku ve pdf olustur" time="3.438">
+<testsuite errors="0" failures="0" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="1" time="1.611">
+    <testcase classname="US1013 Kullanici excel bilgilerine ulasir" name="TC18 kullanici excel bilgilerini kullanir" time="1.11">
         <system-out>
-            <![CDATA[* DB'e baglan "jdbc:postgresql://medunna.com:5432/medunna_db" and "medunnadb_user" , "Medunnadb_@129".passed
-* pdf olusturmak icin "Select * from jhi_user" yap..........................passed
+            <![CDATA[Given kullanici dosyayi kullanilabilir hale getirelim.......................passed
+Then - 1.satirdaki 2.hucreyi yazdirir.......................................passed
+Then - baskenti Jakarta olan ulke ismini yazdiralim.........................passed
+Then - Ulke sayisinin 198 oldugunu test eder................................passed
+And - fiziki olarak kullanilan satir sayisinin 191 oldugunu test eder.......passed
 ]]>
         </system-out>
     </testcase>

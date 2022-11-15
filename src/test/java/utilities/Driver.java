@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+
 import java.time.Duration;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -51,7 +52,7 @@ public class Driver {
                 driver = new ChromeDriver(new ChromeOptions().setHeadless(true));
             }
         }
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().window().maximize();
         return driver;
     }
@@ -111,8 +112,6 @@ public class Driver {
             }
         }
     }
-
-
 
     public static void waitAndSendTextWithDefaultTime(WebElement element, String text) {
         for (int i = 0; i < timeout; i++) {
@@ -252,7 +251,7 @@ public class Driver {
     /**
      * Clicks on an element using JavaScript
      *
-     * @param element
+     * //@param element
      */
     public static void clickWithJS(WebElement element) {
         ((JavascriptExecutor) Driver.getDriver()).executeScript("arguments[0].scrollIntoView(true);", element);
@@ -262,7 +261,7 @@ public class Driver {
     /**
      * Clicks on an element using JavaScript
      *
-     * @param elements
+     * //@param elements
      */
     public static void clickWithJSAsList(List<WebElement> elements) {
         for (WebElement each : elements) {

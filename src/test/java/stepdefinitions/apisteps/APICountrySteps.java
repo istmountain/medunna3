@@ -12,19 +12,11 @@ public class APICountrySteps {
     Response response;
 
     @Given("kullanici medunna apiden {string} ulke bilgilerini okur")
-    public void kullanici_medunna_apiden_ulke_bilgilerini_okur(String url) {
-        response = given().headers(
-                        "Authorization",
-                        "Bearer " + Authentication.generateToken(),
-                        "Content-Type",
-                        ContentType.JSON,
-                        "Accept",
-                        ContentType.JSON)
-                .when()
-                .get(url)
-                .then()
-                .extract()
-                .response();
+    public void kullanici_medunna_apiden_ulke_bilgilerini_okur(String url)
+    {
+        response = given().headers("Authorization","Bearer " + Authentication.generateToken(),
+         "Content-Type", ContentType.JSON, "Accept", ContentType.JSON)
+         .when().get(url).then().extract().response();
         response.prettyPrint();
 
     }
@@ -33,19 +25,10 @@ public class APICountrySteps {
     @Given("kullanici api end point {string} den {string} ve {string} kullanarak ulke olusturur")
     public void kullanici_api_end_point_den_ve_kullanarak_ulke_olusturur(String url, String type, String country) {
 
-        response = given().headers(
-                        "Authorization",
-                        "Bearer " + Authentication.generateToken(),
-                        "Content-Type",
-                        ContentType.JSON,
-                        "Accept",
-                        ContentType.JSON)
-                .when().body("{\""+type+"\":\""+country+"\"}")
-                .post(url)
-                .then()
-                .contentType(ContentType.JSON)
-                .extract()
-                .response();
+        response = given().headers("Authorization", "Bearer " + Authentication.generateToken(),
+         "Content-Type", ContentType.JSON, "Accept", ContentType.JSON)
+         .when().body("{\""+type+"\":\""+country+"\"}").post(url).then()
+         .contentType(ContentType.JSON).extract().response();
     }
 
     @Given("kullanici api end point {string} den {string} ve {string} kullanarak guncelleme yapar")

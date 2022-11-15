@@ -17,14 +17,22 @@
       <scope value="GLOBAL" />
       <destination value="FILE" />
       <format value="EXCEL" />
-      <charset value="windows-1254" />
+      <charset value="UTF-8" />
+      <charset value="UTF-8" />
     </export-instructions>
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
     <autoscroll-to-editor value="false" />
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
-    <loaded-nodes />
+    <loaded-nodes>
+      <connection connection-id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f">
+        <schema name="information_schema" object-types="table, view, function" />
+        <schema name="pg_catalog" object-types="table, view, function" />
+        <schema name="pg_toast_temp_1" object-types="table, view, function" />
+        <schema name="public" object-types="table, view, function, column" />
+      </connection>
+    </loaded-nodes>
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
     <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f">
@@ -54,13 +62,14 @@ select * from country where id=80063
 
 select * from room
 
-select * from country]]></console>
+select * from country
+
+Select * FROM jhi_user]]></console>
+      <console name="Medunna DB 1" type="STANDARD" schema="public" session="Main"><![CDATA[Select * FROM jhi_user]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseFileManager">
-    <open-files>
-      <object connection-id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" object-ref="consoles/Medunna DB" />
-    </open-files>
+    <open-files />
   </component>
   <component name="DBNavigator.Project.DatabaseSessionManager">
     <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" />
@@ -94,7 +103,7 @@ select * from country]]></console>
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" active="true">
+      <connection id="8b436d45-dea5-42da-be42-8a5bf7bd9b1f" active="true" signed="true">
         <database>
           <name value="Medunna DB" />
           <description value="" />
@@ -109,8 +118,8 @@ select * from country]]></console>
           <port value="5432" />
           <database value="medunna_db" />
           <type value="USER_PASSWORD" />
-          <user value="medunnadb_user" />
-          <deprecated-pwd value="TWVkdW5uYWRiX0AxMjk=" />
+          <user value="medunna_user" />
+          <deprecated-pwd value="bWVkdW5uYV9wYXNzXzk4Nw==" />
         </database>
         <properties>
           <auto-commit value="false" />
@@ -148,7 +157,7 @@ select * from country]]></console>
           <alternative-statement-delimiter value="" />
         </details>
         <object-filters hide-empty-schemas="false" hide-pseudo-columns="false">
-          <object-type-filter use-master-settings="true">
+          <object-type-filter>
             <object-type name="SCHEMA" enabled="true" />
             <object-type name="USER" enabled="true" />
             <object-type name="ROLE" enabled="true" />
@@ -219,6 +228,7 @@ select * from country]]></console>
         <object-type name="FUNCTİON" sorting-type="NAME" />
         <object-type name="PROCEDURE" sorting-type="NAME" />
         <object-type name="ARGUMENT" sorting-type="POSITION" />
+        <object-type name="TYPE ATTRİBUTE" sorting-type="POSITION" />
       </sorting>
       <default-editors>
         <object-type name="VİEW" editor-type="SELECTION" />
@@ -265,11 +275,11 @@ select * from country]]></console>
         <nulls-first value="true" />
         <max-sorting-columns value="4" />
       </sorting>
-      <tracking-columns>
-        <columnNames value="" />
+      <audit-columns>
+        <column-names value="" />
         <visible value="true" />
         <editable value="false" />
-      </tracking-columns>
+      </audit-columns>
     </dataset-grid-settings>
     <dataset-editor-settings>
       <text-editor-popup>

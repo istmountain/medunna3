@@ -1,34 +1,26 @@
 package stepdefinitions.dbsteps;
-
-import org.junit.Assert;
 import org.junit.Test;
 import utilities.DatabaseUtility;
-import utilities.ReadTxt;
-import utilities.WriteToTxt;
-
-import java.util.ArrayList;
-import java.util.List;
-
-import static utilities.DatabaseUtility.getColumnData;
-
 public class DBTest {
 
     @Test
-    public void test(){
+    public void test() {
 
         //DATABASE iLE BAGLANTI KUR
 
         String url = "jdbc:postgresql://medunna.com:5432/medunna_db";
-        String username = "medunnadb_user";
-        String password = "Medunnadb_@129";
+        String username = "medunna_user";
+        String password = "medunna_pass_987";
 
-        DatabaseUtility.createConnection(url,username, password);
+        DatabaseUtility.createConnection(url, username, password);
 
         String query = "select * from physician";
         System.out.println(DatabaseUtility.getColumnNames(query)  + "\n");
         //SUTUN iSiMLERi
-        //[id, first_name, last_name, birth_date, phone, gender, blood_group, adress, description, created_date, user_id, country_id, cstate_id, created_by, last_modified_by, last_modified_date, speciality, exam_fee, image, image_content_type]
-
+        //[id, first_name, last_name, birth_date, phone, gender, blood_group,
+        // adress, description, created_date, user_id, country_id, cstate_id, created_by,
+        // last_modified_by, last_modified_date, speciality, exam_fee, image, image_content_type]
+/*
         //ID'LERE ULASMA VE KAYDETME
         System.out.println("=====================ID LIST==================");
         List<Object> idList = getColumnData(query, "id");
@@ -60,6 +52,6 @@ public class DBTest {
         expectedPhysicianIDs.add("Mustafa");
 
         Assert.assertTrue("iSiMLER UYUSMUYOR", actualPhysicianNames.containsAll(expectedPhysicianNames));
-
+*/
     }
-}
+    }

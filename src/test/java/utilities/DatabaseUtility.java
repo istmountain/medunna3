@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 public class DatabaseUtility {
     private static Connection connection;
     private static Statement statement;
@@ -21,11 +22,39 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
+
     public static void main(String[] args) {
-        createConnection("jdbc:postgresql://medunna.com:5432/medunna_db","medunnadb_user" , "Medunnadb_@129");
-        System.out.println(getColumnData("Select * FROM jhi_user", "first_name"));
+        createConnection("jdbc:postgresql://medunna.com:5432/medunna_db", "medunna_user", "medunna_pass_987");
+        String query = "Select * FROM jhi_user";
+
+        System.out.println(getColumnAsString(query, "first_name"));
+        System.out.println(getQueryResultMap(query));
+
         closeConnection();
+
+
     }
+
+    public static List<String> getColumnAsString(String query, String columnname) {
+        List<Object> gelendata = getColumnData(query, columnname);
+        List<String> stringData = new ArrayList<>();
+        for (int i = 0; i < gelendata.size(); i++) {
+           if(gelendata.get(i)!=null){
+               stringData.add(gelendata.get(i).toString());
+           }
+
+        }
+        return stringData;
+    }
+
+
+    //System.out.println(getColumnData("Select * FROM jhi_user", "ssn"));
+    //List<String> stringlist=getColumnData2(query,"first_name");
+    // List<Object> firstnamelist =getColumnData(query,"first_name");
+    //    System.out.println(firstnamelist);
+    // System.out.println(stringlist);
+
+
     public static void createConnection(String url, String user, String password) {
         try {
             connection = DriverManager.getConnection(url, user, password);
@@ -34,6 +63,7 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
+
     public static void closeConnection() {
         try {
             if (resultSet != null) {
@@ -49,41 +79,41 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
+
     /**
-     *
      * @param query
      * @return returns a single cell value. If the results in multiple rows and/or
-     *         columns of data, only first column of the first row will be returned.
-     *         The rest of the data will be ignored
+     * columns of data, only first column of the first row will be returned.
+     * The rest of the data will be ignored
      */
     public static Object getCellValue(String query) {
         return getQueryResultList(query).get(0).get(0);
     }
+
     /**
-     *
      * @param query
      * @return returns a list of Strings which represent a row of data. If the query
-     *         results in multiple rows and/or columns of data, only first row will
-     *         be returned. The rest of the data will be ignored
+     * results in multiple rows and/or columns of data, only first row will
+     * be returned. The rest of the data will be ignored
      */
     public static List<Object> getRowList(String query) {
         return getQueryResultList(query).get(0);
     }
+
     /**
-     *
      * @param query
      * @return returns a map which represent a row of data where key is the column
-     *         name. If the query results in multiple rows and/or columns of data,
-     *         only first row will be returned. The rest of the data will be ignored
+     * name. If the query results in multiple rows and/or columns of data,
+     * only first row will be returned. The rest of the data will be ignored
      */
     public static Map<String, Object> getRowMap(String query) {
         return getQueryResultMap(query).get(0);
     }
+
     /**
-     *
      * @param query
      * @return returns query result in a list of lists where outer list represents
-     *         collection of rows and inner lists represent a single row
+     * collection of rows and inner lists represent a single row
      */
     public static List<List<Object>> getQueryResultList(String query) {
         executeQuery(query);
@@ -104,8 +134,8 @@ public class DatabaseUtility {
         }
         return rowList;
     }
+
     /**
-     *
      * @param query
      * @param column
      * @return list of values of a single column from the result set
@@ -125,14 +155,13 @@ public class DatabaseUtility {
         }
         return rowList;
     }
+
     /**
-     *
      * @param query
      * @return returns query result in a list of maps where the list represents
-     *         collection of rows and a map represents represent a single row with
-     *         key being the column name
+     * collection of rows and a map represents represent a single row with
+     * key being the column name
      */
-
 
 
     public static List<Map<String, Object>> getQueryResultMap(String query) {
@@ -154,8 +183,8 @@ public class DatabaseUtility {
         }
         return rowList;
     }
+
     /**
-     *
      * @param query
      * @return List of columns returned in result set
      */
@@ -175,6 +204,7 @@ public class DatabaseUtility {
         }
         return columns;
     }
+
     public static void executeQuery(String query) {
         try {
             statement = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
@@ -189,13 +219,16 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
+
     public static int getRowCount() throws Exception {
         resultSet.last();
         int rowCount = resultSet.getRow();
         return rowCount;
     }
-    public static void insertCountry(String  countryName){
+
+    public static void insertCountry(String countryName) {
     }
+
     public static void executeInsertion(String query) {
         try {
             statement = connection.createStatement();
@@ -210,20 +243,56 @@ public class DatabaseUtility {
             e.printStackTrace();
         }
     }
-    public static int getMaxCountryId (String query,String column){
+
+    public static int getMaxCountryId(String query, String column) {
         int max = 0;
         List<Object> allIds = getColumnData(query, column);
-        for (int i=0; i<allIds.size();i++){
+        for (int i = 0; i < allIds.size(); i++) {
             int num = Integer.parseInt(allIds.get(i).toString().trim());
-            if(max <= num)
-                max=num;
+            if (max <= num)
+                max = num;
         }
         return max;
     }
-    public static Object getCellValuewithRowsAndCells(String query,int row,int cell) {
+
+    public static Object getCellValuewithRowsAndCells(String query, int row, int cell) {
         return getQueryResultList(query).get(row).get(cell);
     }
-    public static List<Object> getRowListWithParam(String query,int row) {
+
+    public static List<Object> getRowListWithParam(String query, int row) {
         return getQueryResultList(query).get(row);
     }
+
+    /* public static List<String> getColumDataAsString2(List<Object> data){
+        List<String> extratedData=new ArrayList<>();
+         for (int i = 0; i <data.size() ; i++) {
+             extratedData.add(data.get(i).toString());
+         }
+
+       return extratedData;
+     }
+    public static List<String> getColumDataAsString2(String query,String columnname) {
+        List<String> extratedData=new ArrayList<>();
+        List<Object> columnData=getColumnData(query,columnname);
+
+        for (int i = 0; i <columnData.size() ; i++) {
+            extratedData.add(columnData.get(i).toString());
+        }
+
+        return extratedData;
+    }
+*/
+    public static List<String> getColumnData2(String query, String column) {
+
+        List<Object> gelendata = getColumnData(query, column);
+        List<String> stringdata = new ArrayList<>();
+        for (int i = 0; i < gelendata.size(); i++) {
+            stringdata.add(gelendata.get(i).toString());
+
+        }
+
+        return stringdata;
+    }
+
+
 }

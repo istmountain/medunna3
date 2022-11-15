@@ -1,4 +1,4 @@
-package runner;
+package runners;
 
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
@@ -13,9 +13,10 @@ import org.junit.runner.RunWith;
                 "rerun:target/failedRerun.txt"
         },
         features = "./src/test/resources/features",
-        glue = {"stepdefinitions","Hooks"},
-        tags = "@pdf",
-        dryRun = false
+        glue ={"stepdefinitions","Hooks"},
+        tags = "@baskentler",
+        dryRun =false
 )
-public class Runner {
-}
+   public class TestRunner {
+
+    }
